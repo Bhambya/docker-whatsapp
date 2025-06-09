@@ -51,11 +51,7 @@ def login():
     try:
         messenger = WhatsApp(LOGGER, browser=browser, time_out=30)
         browser.get(messenger.BASE_URL)
-        WebDriverWait(browser, 120).until(
-            EC.presence_of_element_located(
-                (By.CSS_SELECTOR, "[aria-label^='New chat']")
-            )
-        )
+        messenger.wait_for_login()
 
         return jsonify({'status': 'success'})
     except (NoSuchElementException, Exception) as e:
