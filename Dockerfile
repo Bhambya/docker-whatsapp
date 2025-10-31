@@ -6,7 +6,7 @@ RUN echo "**** install packages ****" && \
     apt-get install -y --no-install-recommends \
     python3 \
     python3-pip \
-    python3.11-venv \
+    python3.13-venv \
     chromium-driver \
     xclip && \
     echo "**** cleanup ****" && \
