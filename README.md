@@ -49,8 +49,7 @@ Scan the QR code. The API will return `{"status":"success"}` after successful lo
 ### Dry run sending a message
 
 ```
-curl -X POST -H "Content-Type: application/json" -d '{"phone_number": "<phone number>"}' http://localhost:5000/api/dry
-_run_message
+curl -X POST -H "Content-Type: application/json" -d '{"phone_number": "<phone number>"}' http://localhost:5000/api/dry_run_message
 ```
 
 This will check that the text box to send the message is located and is clickable. Some pop ups might appear which should be cancelled by you so that they never appear again.
@@ -60,8 +59,7 @@ This API can also be used as a healthcheck.
 ### Send a message
 
 ```
-curl -X POST -H "Content-Type: application/json" -d '{"phone_number": "<phone number>", "message": "Hi"}' http://localhost:5000/api
-/message
+curl -X POST -H "Content-Type: application/json" -d '{"phone_number": "<phone number>", "message": "Hi"}' http://localhost:5000/api/message
 ```
 
 The this will send a message to the specified phone number.

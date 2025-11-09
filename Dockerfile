@@ -1,4 +1,4 @@
-FROM linuxserver/chromium:latest
+FROM linuxserver/chromium:version-7461b84c
 
 # Install git and python dependencies
 RUN echo "**** install packages ****" && \
