@@ -34,7 +34,7 @@ class WhatsApp(object):
         )
         WebDriverWait(self.browser, 60).until(
             EC.presence_of_element_located(
-                (By.CSS_SELECTOR, "[data-icon^='new-chat']")
+                (By.CSS_SELECTOR, "[aria-label='New chat']")
             )
         )
 
