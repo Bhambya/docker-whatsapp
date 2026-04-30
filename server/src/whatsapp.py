@@ -8,8 +8,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
-SEND_MESSAGE_BOX_XPATH = '/html/body/div[1]/div/div/div/div/div[3]/div/div[5]/div/footer/div[1]/div/span/div/div/div/div[3]/div[1]/p'
-
 
 class WhatsApp(object):
     """
@@ -52,7 +50,7 @@ class WhatsApp(object):
         self.browser.get(link)
         self.wait_for_login()
         WebDriverWait(self.browser, 15).until(
-            EC.element_to_be_clickable((By.XPATH, SEND_MESSAGE_BOX_XPATH))
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "[aria-placeholder='Type a message']"))
         )
 
     def send_message(self, message, timeout=0.0):
